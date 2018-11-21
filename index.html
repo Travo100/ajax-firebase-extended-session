@@ -12,13 +12,18 @@
 </head>
 
 <body>
-    <h1>Welcome to demo gif land!</h1>
+    <form>
+        <input type="text" placeholder="enter your name" name="user-name" id="user-name">
+        <input type="submit" id="submit-form">
+    </form>
+    <h1>Welcome <span id="user-name-local"></span> to demo gif land!</h1>
     <div class="button-container">
         <button class="gif-button" data-name="cats">Cats</button>
         <button class="gif-button" data-name="dogs">Dogs</button>
         <button class="gif-button" data-name="lizards">Lizards</button>
     </div>
     <div id="gif-container"></div>
+
     <script src="assets/javascript/app.js"></script>
 </body>
 

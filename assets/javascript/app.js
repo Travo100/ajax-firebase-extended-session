@@ -42,7 +42,7 @@ function makeAPICallToGiphy(queryItem) {
 // when I click on one 
 // of the gifs it will go from still to animate 
 // and from animate to still
-$(document).on("click", ".gif-image", function(e){
+$(document).on("click", ".gif-image", function(e) {
     e.preventDefault();
     var state = $(this).attr("data-state");
     var animateUrl = $(this).attr("data-animate");
@@ -71,3 +71,17 @@ $(document).on("click", ".gif-button", function(e){
     var btnValue = $(this).attr("data-name");
     makeAPICallToGiphy(btnValue);
 });
+
+$("#submit-form").on("click", function(e){
+    e.preventDefault();
+    var userName = $("#user-name").val().trim();
+    console.log(userName);
+    $("#user-name-local").text(userName);   
+    
+    // setting an item in localStorage setItem
+    localStorage.setItem("username", userName);
+});
+
+// getting an item from localStorage with getItem
+var localUserName = localStorage.getItem("username");
+$("#user-name-local").text(localUserName);
